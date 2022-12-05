@@ -25,9 +25,9 @@ public class MainController {
 	
 	@GetMapping
 	public String getPizza(Model model) {
-	List<Pizza> pizze = pizzaService.findAll();
-	model.addAttribute("pizza",pizze);
-	return "pizze";
+	List<Pizza> pizzas = pizzaService.findAll();
+	model.addAttribute("pizza",pizzas);
+	return "index";
 	}
 	@GetMapping("/pizza/{id}")
 	public String getBook(@PathVariable("id") int id, Model model) {
@@ -47,12 +47,12 @@ public class MainController {
 	}
 	
 	@GetMapping("/pizza/create")
-	public String createBook(Model model) {
+	public String createPizza(Model model) {
 		
-		Pizza book = new Pizza();
-		model.addAttribute("book", book);
+		Pizza pizza = new Pizza();
+		model.addAttribute("pizza", pizza);
 		
-		return "pizza-create";
+		return "/pizza/create";
 	}
 	@PostMapping("/pizza/create")
 	public String storePizza(@Valid @ModelAttribute("pizza") Pizza pizza) {
