@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import jakarta.validation.Valid;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/index")
 public class MainController {
 	
 	@Autowired
