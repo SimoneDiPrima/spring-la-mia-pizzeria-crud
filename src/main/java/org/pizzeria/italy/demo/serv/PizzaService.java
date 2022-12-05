@@ -22,6 +22,10 @@ public class PizzaService {
 	public List<Pizza> findAll(){
 		return pizzaRepo.findAll();
 	}
+	public Optional<Pizza> findBookById(int id) {
+		
+		return pizzaRepo.findById(id);
+	}
 
 	
 }

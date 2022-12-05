@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>NEW PIZZA:</h1>
+	<form 
+		method="POST" 
+		action="/book/create"
+		th:object="${book}" >
+	
+		<label>Title</label>
+		<input type="text" name="title" th:field="*{title}">
+		<br>
+		<label>Description</label>
+		<input type="number" name="description" th:field="*{description}">
+		<br>
+		<label>Price</label>
+		<input type="number" name="price" th:field="*{price}">
+		<br>
+		<input type="submit" value="CREATE">
+	
+	</form>
+
+</body>
+</html>

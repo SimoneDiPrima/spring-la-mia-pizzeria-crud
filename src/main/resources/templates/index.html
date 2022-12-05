@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h4>Menu pizzeria "migliore del mondo"</h4>
+<ul>
+	<li
+		th:each="pizza : ${pizze}"
+		th:object="${pizza}">
+			([[*{name}]])
+			<a th:href="@{/pizza/{id} (id=*{id})}">[[*{name}]]</a>
+	</li>
+	</ul>
+
+</body>
+</html>
