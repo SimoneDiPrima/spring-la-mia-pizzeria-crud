@@ -5,14 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body th:object="${pizza}">
+<h1>Pizza</h1>
 
-<h4>Choose your favourite:</h4>
-<a
+	<a
 		th:href="@{/pizza/{id} (id=*{id})}"
 	>
 		 [[*{name}]]
 	</a>
-
 
 </body>
 </html>

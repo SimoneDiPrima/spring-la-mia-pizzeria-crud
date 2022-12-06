@@ -6,7 +6,10 @@
 </head>
 <body>
 <h1>Pizzeria bella Napoli!</h1>
+<a href="/pizza/create" type="button"><h5>Crea la tua nuova pizza preferita!</h5></a>
 <ul th:object="${pizza}">Menu
-<li th:each="pizza : ${pizza}" th:text="${pizza.name}" ><a th:href="@{/pizza/{id} (id=*{id})}"></a></li></ul>
+		<li th:each="pizza : ${pizza}" th:text="${pizza.name}" >
+		</li>
+</ul>
 </body>
 </html>

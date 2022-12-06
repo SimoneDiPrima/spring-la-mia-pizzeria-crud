@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-
-<h1>NEW PIZZA:</h1>
+	<h1>Pizza CREATE</h1>
 	<form 
 		method="POST" 
 		action="/pizza/create"
 		th:object="${pizza}" >
 	
-		<label>Title</label>
-		<input type="text" name="title" th:field="*{title}">
+		<label>Nome</label>
+		<input type="text" name="name" th:field="*{name}">
 		<br>
-		<label>Description</label>
-		<input type="number" name="description" th:field="*{description}">
+		<label>Descrizione</label>
+		<input type="text" name="description" th:field="*{description}">
 		<br>
-		<label>Price</label>
+		<label>Prezzo</label>
 		<input type="number" name="price" th:field="*{price}">
+		<br>
+	
 		<br>
 		<input type="submit" value="CREATE">
 	
 	</form>
-
 </body>
 </html>
