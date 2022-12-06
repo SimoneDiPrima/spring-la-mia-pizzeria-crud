@@ -1,4 +1,4 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
@@ -6,9 +6,9 @@
 </head>
 <body>
 <h1>Pizzeria bella Napoli!</h1>
-<a href="/pizza/create" type="button"><h5>Crea la tua nuova pizza preferita!</h5></a>
-<ul th:object="${pizza}">Menu
-		<li th:each="pizza : ${pizza}" th:text="${pizza.name}"> 	
+<a href="/drink/create" type="button"><h5>Crea un nuovo drink</h5></a>
+<ul th:object="${drink}">Menu Bibite
+		<li th:each="drink : ${drink}" th:text="${drink.name}"> 	
 		</li>
 		
 </ul>
@@ -17,5 +17,6 @@
 			>
 				Elimina
 			</a>
+<
 </body>
 </html>
