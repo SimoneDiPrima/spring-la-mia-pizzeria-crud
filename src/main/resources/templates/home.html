@@ -16,7 +16,7 @@
 			([[*{id}]]) <strong>[[*{name}]]</strong> - [[*{price}]] EURO<br>
 			[[*{description}]]<br th:if="*{description}">
 				<a class="btn btn-warning text-white" th:href="@{/pizza/update/{id} (id=*{id})}">MODIFICA LA PIZZA</a> - 
-			<a class="btn btn-danger text-white" th:href="@{/pizza/delete/{id} (id=*{id})}">CANCELLA DAL MENU LA PIZZA</a>
+				<a class="btn btn-danger text-white" th:href="@{/pizza/delete/{id} (id=*{id})}">CANCELLA DAL MENU LA PIZZA</a>
 		</li>
 	</ul>
 </container>
