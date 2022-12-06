@@ -6,12 +6,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Pizza CREATE</h1>
-	<form 
+
+<form 
 		method="POST" 
-		action="/pizza/create"
-		th:object="${pizza}" >
-	
+		action="/drink/update"
+		th:object="${drink}" >
+		<input type="text" name="id" th:field="*{id}" style="display:none">
 		<label>Nome</label>
 		<input type="text" name="name" th:field="*{name}">
 		<br>
@@ -23,8 +23,9 @@
 		<br>
 	
 		<br>
-		<input class="offset-8 btn btn-success text-white" type="submit" value="CREATE">
+		<input type="submit" value="UPDATE">
 	
 	</form>
+
 </body>
 </html>
