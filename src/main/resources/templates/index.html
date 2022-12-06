@@ -7,11 +7,10 @@
 <body>
 
 <h4>Menu pizzeria "migliore del mondo"</h4>
-<ul th:object="${pizza}">
-	<li
-		th:each="pizza : ${pizze}">
-			[[*{name}]]
-	</li>
+	<ul>
+		<li th:each="p : ${pizza}" th:object=${p}>
+		[[*{name}]]
+		</li>
 	</ul>
 
 </body>
