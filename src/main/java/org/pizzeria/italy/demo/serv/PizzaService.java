@@ -14,6 +14,7 @@ public class PizzaService {
 	
 	@Autowired
 	private PizzaRepo pizzaRepo;
+	
 	public void save(Pizza pizza) {
 		pizzaRepo.save(pizza);
 		
@@ -22,9 +23,18 @@ public class PizzaService {
 	public List<Pizza> findAll(){
 		return pizzaRepo.findAll();
 	}
-	public Optional<Pizza> findBookById(int id) {
+	public Optional<Pizza> findById(int id) {
 		
 		return pizzaRepo.findById(id);
+	}
+
+public void delete(Pizza pizza) {
+		
+		pizzaRepo.delete(pizza);
+	}
+	public void deleteById(int id) {
+		
+		pizzaRepo.deleteById(id);
 	}
 
 	

@@ -1,7 +1,8 @@
 package org.pizzeria.italy.demo;
-import java.util.List;
 
 import org.pizzeria.italy.demo.pojo.Pizza;
+import org.pizzeria.italy.demo.pojo.Drink;
+import org.pizzeria.italy.demo.serv.DrinkService;
 import org.pizzeria.italy.demo.serv.PizzaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,7 +14,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner{
 	@Autowired
-	private PizzaService pizzaService;
+	private PizzaService P;
+	@Autowired
+	private DrinkService ds;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(SpringLaMiaPizzeriaCrudApplication.class, args);
 	}
@@ -24,15 +28,24 @@ public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner{
 		Pizza p3 = new Pizza("Salsiccia e funghi", "la preferita dagli alpini", 9);
 		Pizza p4 = new Pizza("Filomena", "la piu formaggiosa di sempre",9);
 		
-		pizzaService.save(p1);
-		pizzaService.save(p2);
-		pizzaService.save(p3);
-		pizzaService.save(p4);
+		P.save(p1);
+		P.save(p2);
+		P.save(p3);
+		P.save(p4);
 		
-		// LETTURA
+		Drink d1 = new Drink("coca","colaaaaaa",9);
+		Drink d2 = new Drink("fanta","e vedi che ti mangi",9);
+		Drink d3 = new Drink("sprite","Gente di mare",5);
+		Drink d4 = new Drink("peroncino","la birra bevuta dai campioni",3);
+		Drink d5 = new Drink("Gin Tonic"," dai che è venerdiiii",7);
 		
-		List<Pizza> pizze = pizzaService.findAll();
-		System.out.println(pizze);
+		
+		ds.save(d1);
+		ds.save(d2);
+		ds.save(d3);
+		ds.save(d4);
+		ds.save(d5);
+		
 		
 	}
 
