@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 
@@ -73,6 +74,22 @@ public class DrinkController {
 		
 		return "redirect:/drink";
 	}
+	@GetMapping("/search")
+		public String searchDrinkByName(Model model,
+				@RequestParam(name="query" , required = false)String query) {
+			List <Drink> drink = null;
+			if(query == null) {
+				drink = drinkService.findAll();
+				model.addAttribute("drink",drink);
+			}
+			else {
+				drink = drinkService.FindByName(query);
+			}
+			model.addAttribute("drink",drink);
+			model.addAttribute("query",query);
+			return "drink-search";
+		}
+	
 	
 
 }

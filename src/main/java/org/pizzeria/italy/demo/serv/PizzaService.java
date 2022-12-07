@@ -36,6 +36,7 @@ public void delete(Pizza pizza) {
 		
 		pizzaRepo.deleteById(id);
 	}
-
-	
+public List<Pizza> FindByName(String name){
+	return pizzaRepo.findByNameContainingIgnoreCase(name);
+}
 }

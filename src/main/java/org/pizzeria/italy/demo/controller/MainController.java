@@ -3,6 +3,7 @@ package org.pizzeria.italy.demo.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.pizzeria.italy.demo.pojo.Drink;
 import org.pizzeria.italy.demo.pojo.Pizza;
 import org.pizzeria.italy.demo.serv.PizzaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 
@@ -89,6 +90,22 @@ public class MainController {
 		
 		return "redirect:/";
 	}
+	@GetMapping("/pizza/search")
+	public String searchPizzaByName(Model model,
+			@RequestParam(name="query" , required = false)String query) {
+		List <Pizza> pizza = null;
+		if(query == null) {
+			pizza = pizzaService.findAll();
+			model.addAttribute("pizza",pizza);
+		}
+		else {
+			pizza =pizzaService.FindByName(query);
+		}
+		model.addAttribute("pizza",pizza);
+		model.addAttribute("query",query);
+		return "pizza-search";
+	}
+
 }
 
 
