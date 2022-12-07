@@ -5,26 +5,27 @@
 <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
 <title>Insert title here</title>
 </head>
-<body>
-	<h1>Pizza CREATE</h1>
-	<form 
+<body class="bg-dark">
+	<container class="text-white">
+		<h1>Pizza CREATE</h1>
+		<form 
 		method="POST" 
 		action="/pizza/create"
 		th:object="${pizza}" >
 	
-		<label>Nome</label>
-		<input type="text" name="name" th:field="*{name}">
-		<br>
-		<label>Descrizione</label>
-		<input type="text" name="description" th:field="*{description}">
-		<br>
-		<label>Prezzo</label>
-		<input type="number" name="price" th:field="*{price}">
-		<br>
+			<label>Nome</label>
+			<input type="text" name="name" th:field="*{name}">
+			<br>
+			<label>Descrizione</label>
+			<input type="text" name="description" th:field="*{description}">
+			<br>
+			<label>Prezzo</label>
+			<input type="number" name="price" th:field="*{price}">
+			<br>
 	
-		<br>
-		<input class="offset-8 btn btn-success text-white" type="submit" value="CREATE">
-	
-	</form>
+			<br>
+			<input class="offset-8 btn btn-success text-white" type="submit" value="CREATE">
+		</form>
+	</container>
 </body>
 </html>

@@ -40,7 +40,6 @@ public class Drink {
 		setName(name);
 		setDescription(description);
 		setPrice(price);
-		
 	}
 	
 	public String getName() {

@@ -37,7 +37,7 @@ public class MainController {
 		
 		if (optPizza.isEmpty()) {
 			
-			System.err.println("Book non presente con id: " + id);
+			System.err.println("Pizza non presente con id: " + id);
 		}
 		
 		Pizza pizza = optPizza.get();
@@ -78,8 +78,6 @@ public class MainController {
 		
 		return "redirect:/";
 	}
-	
-	
 	@GetMapping("/pizza/delete/{id}")
 	public String deletePizza(@PathVariable("id") int id) {
 		

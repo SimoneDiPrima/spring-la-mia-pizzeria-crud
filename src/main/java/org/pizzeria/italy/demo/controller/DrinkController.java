@@ -62,8 +62,6 @@ public class DrinkController {
 		
 		return "redirect:/drink";
 	}
-	
-	
 	@GetMapping("/delete/{id}")
 	public String deleteDrink(@PathVariable("id") int id) {
 		

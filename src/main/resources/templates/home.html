@@ -6,19 +6,19 @@
 <title>Insert title here</title>
 </head>
 <body class="bg-dark">
-<container class="text-white">
-	<h1 class="text-center text-warning">Pizzeria bella Napoli!</h1>
-	<a class="offset-8 btn btn-success text-white"  href="/pizza/create" type="button"><h5>Crea la tua nuova pizza preferita!</h5></a>
+	<container class="text-white">
+		<h1 class="text-center text-warning">Pizzeria bella Napoli!</h1>
+		<a class="offset-8 btn btn-success text-white"  href="/pizza/create" type="button"><h5>Crea la tua nuova pizza preferita!</h5></a>
 		<ul style="list-style-type:none"><strong>Menu</strong>
 			<li
-			th:each="pizza : ${pizza}"
-			th:object="${pizza}">
-			<span class="invisible">([[*{id}]])</span><br><strong>[[*{name}]]</strong> - <strong>[[*{price}]] EURO</strong><br>
-			[[*{description}]]<br th:if="*{description}">
+				th:each="pizza : ${pizza}"
+				th:object="${pizza}">
+				<span class="invisible">([[*{id}]])</span><br><strong>[[*{name}]]</strong> - <strong>[[*{price}]] EURO</strong><br>
+				[[*{description}]]<br th:if="*{description}">
 				<a class="btn btn-warning text-white" th:href="@{/pizza/update/{id} (id=*{id})}">MODIFICA LA PIZZA</a> - 
 				<a class="btn btn-danger text-white" th:href="@{/pizza/delete/{id} (id=*{id})}">CANCELLA DAL MENU LA PIZZA</a>
-		</li>
-	</ul>
-</container>
+			</li>
+		</ul>
+	</container>
 </body>
 </html>
