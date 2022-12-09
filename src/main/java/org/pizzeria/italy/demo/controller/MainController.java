@@ -44,7 +44,7 @@ public class MainController {
 		
 		model.addAttribute("pizza",pizza );
 		
-		return "pizza";
+		return "pizza-show";
 	}
 	@GetMapping("/pizza/create")
 	public String createPizza(Model model) {

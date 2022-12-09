@@ -46,6 +46,19 @@ public class DrinkController {
 		
 		return "redirect:/drink";
 	}
+	@GetMapping("/show/{id}")
+	public String getDrinkShow(@PathVariable("id") int id , Model model) {
+		
+		Optional<Drink> optDrink = drinkService.findById(id);
+		Drink drink = optDrink.get();
+	if (optDrink.isEmpty()) {
+			
+			System.err.println("Pizza non presente con id: " + id);
+		}
+	model.addAttribute("drink",drink);
+		
+		return "drink-show";
+	}
 	@GetMapping("/update/{id}")
 	public String getDrinkUpdate(@PathVariable("id") int id, Model model) {
 		

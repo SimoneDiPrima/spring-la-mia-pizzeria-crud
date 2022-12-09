@@ -7,17 +7,19 @@
 </head>
 <body class="bg-dark">
 <container class="text-white">
-	<h1 class="text-center text-warning">Pizzeria bella Napoli!</h1>
+	<h1 class="text-center text-warning mt-4">Pizzeria bella Napoli!</h1>
 	<a class="offset-10 btn btn-success text-white" href="/drink/create" type="button"><h5>Crea un nuovo drink</h5></a>
 	<ul style="list-style-type:none">
 	<strong>Menu Bibite</strong>
 			<li
 			th:each="drink : ${drink}"
 			th:object="${drink}">
-			<span class="invisible">([[*{id}]])</span><br> <strong class="text-start">[[*{name}]]</strong> - <strong>[[*{price}]] EURO</strong><br>
+			<span class="invisible">([[*{id}]])</span><br> <strong class="text-start">[[*{name}]]</strong> - <strong>[[*{price}]]€</strong><br>
 			[[*{description}]]<br th:if="*{description}">
+			<a class="btn btn-success text-white" th:href="@{/drink/show/{id} (id=*{id})}">VEDI NEL DETTAGLIO IL TUO DRINK
+			</a>
 			<a class="btn btn-warning text-white" th:href="@{/drink/update/{id} (id=*{id})}">MODIFICA IL TUO DRINK
-			</a> - 
+			</a>
 			<a class="btn btn-danger text-white" th:href="@{/drink/delete/{id} (id=*{id})}">
 				CANCELLA IL TUO DRINK
 			</a>
