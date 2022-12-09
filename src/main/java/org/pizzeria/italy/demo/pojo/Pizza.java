@@ -13,7 +13,6 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table
 public class Pizza {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;

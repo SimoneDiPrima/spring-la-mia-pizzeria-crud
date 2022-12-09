@@ -7,22 +7,24 @@
 </head>
 <body  class="bg-dark">
 	<container class="text-white">
-		<h1 class="text-center text-warning">Crea il tuo nuovo Drink!</h1>
+		<h1 class="text-center text-warning my-4">Pizzeria bella Napoli!</h1>
+		<a href="/"  class="col-2 btn btn-danger d-block ms-3 mb-4">Torna al menu principale</a>
+		<h3 class="text-warning ms-3 my-4">Crea il tuo nuovo Drink!</h3>
 		<form 
 		method="POST" 
 		action="/drink/create"
-		th:object="${drink}" >
+		th:object="${drink}" class="ms-3">
 	
 			<label>Nome</label>
 			<input type="text" name="name" th:field="*{name}">
 			<br>
 			<label>Descrizione</label>
-			<input type="text" name="description" th:field="*{description}">
+			<input class="my-4" type="text" name="description" th:field="*{description}">
 			<br>
 			<label>Prezzo</label>
 			<input type="number" name="price" th:field="*{price}">
 			<br>
-		<input class="offset-8 btn btn-success text-white" type="submit" value="CREA">
+		<input class="offset-9 col-2 mt-5 btn btn-success text-white" type="submit" value="Crea">
 	
 	</form>
 </container>
